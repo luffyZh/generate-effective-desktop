@@ -131,9 +131,9 @@
           <a onclick="previewDesktop()" class="button is-success">生成预览</a>
           <a onclick="generateDesktop()" class="button is-danger">点击下载</a>
         </div>
-        <div class="control">
-          屏幕宽：<input type='text' value='' onchange="getScreenParam(this, 'width')" />px &nbsp;&nbsp;
-          屏幕高：<input type='text' value='' onchange="getScreenParam(this, 'height')" />px
+        <div class="control" style="display:flex;justify-content: center;flex-wrap:wrap">
+          <div>屏幕宽：<input type='text' value='' onchange="getScreenParam(this, 'width')" />px</div>
+          <div>屏幕高：<input type='text' value='' onchange="getScreenParam(this, 'height')" />px</div>
         </div>
         <div class="control" style="font-size: 0.8em;color:red">
           [提示]：如不填写，系统会按照浏览器最大化窗口为您自动匹配电脑屏幕分辨率～
