@@ -126,10 +126,17 @@
   </section>
   <div class="box cta">
     <div class="columns is-mobile is-centered" style="padding: 10px 0">
-      <div class="field is-grouped is-grouped-multiline">
+      <div class="field is-grouped is-grouped-multiline" style="flex-direction:column;align-items:center">
         <div class="control">
           <a onclick="previewDesktop()" class="button is-success">生成预览</a>
           <a onclick="generateDesktop()" class="button is-danger">点击下载</a>
+        </div>
+        <div class="control">
+          屏幕宽：<input type='text' value='' onchange="getScreenParam(this, 'width')" />px &nbsp;&nbsp;
+          屏幕高：<input type='text' value='' onchange="getScreenParam(this, 'height')" />px
+        </div>
+        <div class="control" style="font-size: 0.8em;color:red">
+          [提示]：如不填写，系统会按照浏览器最大化窗口为您自动匹配电脑屏幕分辨率～
         </div>
       </div>
     </div>
@@ -324,6 +331,20 @@
         color: '#ffdd57'
       }
     ]
+  }
+  // 手动填写屏幕分辨率
+  function getScreenParam(_this, type) {
+    switch(type) {
+      case 'width': {
+        finalObj.screenWidth = parseInt(_this.value, 10);
+        break;
+      }
+      case 'height': {
+        finalObj.screenHeight = parseInt(_this.value, 10);
+        break;
+      }
+      default:
+    }
   }
   // 修改文本的变化
   function inputTextChange(_this, type, index) {
